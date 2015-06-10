@@ -1,0 +1,7 @@
+GET https://datafeed-api.dynatrace.com/publicapi/rest/v1.0/testresults/4433?start=1407859808580&end=1407859822690&detailLevel=ALL&time=ARRIVAL HTTP/1.1
+Accept-Encoding: gzip,deflate
+Accept: application/json
+Authentication: bearer AQIC5wM2LY4SfcxtWnZ1BqleByyvtZJ3M7G5wrV68q12PXY.AAJTSQACMDIAAlNLABQtODM4NjYyNjMxMTYxMjk1MzgxNgACUzEAAjAz
+User-Agent: Jakarta Commons-HttpClient/3.1
+Host: datafeed-api.dynatrace.com
+
