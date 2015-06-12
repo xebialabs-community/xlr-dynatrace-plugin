@@ -1,9 +1,10 @@
-#XLR DynaTrace Plugin
+#XL Release Dynatrace Plugin
+
 ## Preface
-This document descripts the functionality provide by the XLR DynaTrace Plugin as well as potential future functionality.
+This document descripts the functionality provide by the `xlr-dynatrace-plugin`, as well as potential future functionality.
 
 ## Overview
-In addition to being a monitoring tool DynaTrace can be used to collect performance data during load testing.  This plugin strives to collect some performance data to make relase decisions.
+In addition to being a monitoring tool, Dynatrace can be used to collect performance data during load testing.This plugin strives to collect some performance data to make relase decisions.
 
 __Some Useful DynaTrace Links__
 
