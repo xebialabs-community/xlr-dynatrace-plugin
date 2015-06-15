@@ -29,8 +29,10 @@ if response.status == TESTRUN_REGISTERED_STATUS:
     print "Registered test run with ID %s via Dynatrace server at %s." % (testRunId, serverUrl)
 elif response.status == INSUFFICIENT_LICENSE_STATUS:
     print "The Dynatrace server at %s does not have a Test Center Edition license or the connecting user is not authorized." % serverUrl
+    sys.exit(1)
 elif response.status == PROFILE_NOT_FOUND_STATUS:
-    print "No system profile with name %s found in the Dynatrace server at %s." % (profile, serverUrl)
+    print "No system profile with name '%s' found in the Dynatrace server at %s." % (profile, serverUrl)
+    sys.exit(1)
 else:
     print "Failed to register test run via Dynatrace server at %s." % serverUrl
     response.errorDump()
