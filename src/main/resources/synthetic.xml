@@ -36,6 +36,7 @@
   <type type="dynatrace.RetrieveTestResults" extends="dynatrace.Task">
     <property name="profile" category="input" />
     <property name="testRunId" category="input" label="Test Run ID" />
+    <property name="delay" kind="integer" default="10" category="input" label="Delay (secs)"/>
     <property name="numDegradedTests" category="output" label="# Degraded Tests" />
     <property name="numFailedTests" category="output" label="# Failed Tests" />
     <property name="numImprovedTests" category="output" label="# Improved Tests" />

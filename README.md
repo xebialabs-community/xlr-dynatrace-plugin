@@ -41,7 +41,7 @@ Registers a test run with Dynatrace and returns the test run ID. This ID needs t
 
 #### Retrieve test results
 
-Attempts to retrieve the results of a given test run ID from Dynatrace. By default, the task will make 10 requests at 20s intervals before failing.
+Attempts to retrieve the results of a given test run ID from Dynatrace. By default, the task will wait 10s before calling Dynatrace, to give the Dynatrace server sufficient time to process monitoring data collected from the last test runs.
 
 ![screenshot of 'Retrieve test results' task](documentation/retrieve-test-results-task.png)
 
@@ -52,6 +52,7 @@ Attempts to retrieve the results of a given test run ID from Dynatrace. By defau
 * `password`: The password to use to log in to the Dynatrace server. If not set, the password configured on the Dynatrace server configuration CI will be used. _Optional_
 * `profile`: The system profile in Dynatrace against which the test run should be registered. _Required_
 * `testRunId`: The ID of the test run for which results should be retrieved. _Required_
+* `delay`: The number of seconds to wait before calling the Dynatrace server. This gives the server time to process input from the last tests, even if this task is started immediately after the tests have completed. The default value is 10. _Required_
 
 **Output properties**
 
@@ -67,6 +68,8 @@ Attempts to retrieve the results of a given test run ID from Dynatrace. By defau
 The intended use case for this plugin is to support Dynatrace's ability to monitor runs of unit, UI, load, performance and API tests and provide information about architectural and other metrics that are relevant to go/no-go decisions.
 
 The plugin allows you to retrieve this information from Dynatrace for review or, if desired, an automated decision. The plugin does **not** at present provide any tasks to make such decisions.
+
+Note that Dynatrace is not aware of whether a test run has been completed or is still in progress - the call to retrieve tests results will simply return the data available at that moment. You will need to ensure that you set up your template or release so that Dynatrace is not called until the tests you are running have been completed.
 
 ## Example
 The canonical flow here involves registering a new test run with Dynatrace and passing the test run ID that is returned to one or more invocations of test tools, either by invoking the test tool directly, or e.g. as a parameter to a Jenkins build.
