@@ -31,14 +31,14 @@ response = connection.post("/rest/management/profiles/%s/testruns" % profile, co
 if response.status == TESTRUN_REGISTERED_STATUS:
     data = json.loads(response.response)
     testRunId = data.get('testRun').get('id')
-    print "Registered test run with ID %s via Dynatrace server at %s." % (testRunId, serverUrl)
+    print "Registered test run with ID %s via Dynatrace server at %s.\n" % (testRunId, serverUrl)
 elif response.status == INSUFFICIENT_LICENSE_STATUS:
-    print "The Dynatrace server at %s does not have a Test Center Edition license or the connecting user is not authorized." % serverUrl
+    print "The Dynatrace server at %s does not have a Test Center Edition license or the connecting user is not authorized.\n" % serverUrl
     sys.exit(1)
 elif response.status == PROFILE_NOT_FOUND_STATUS:
-    print "No system profile with name '%s' found in the Dynatrace server at %s." % (profile, serverUrl)
+    print "No system profile with name '%s' found in the Dynatrace server at %s.\n" % (profile, serverUrl)
     sys.exit(1)
 else:
-    print "Failed to register test run via Dynatrace server at %s." % serverUrl
+    print "Failed to register test run via Dynatrace server at %s.\n" % serverUrl
     response.errorDump()
     sys.exit(1)
