@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+-->
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <type type="dynatrace.Server" extends="configuration.HttpConnection" >
+    <property name="taskColor" hidden="true" default="#1282C8" />
+    <property name="iconLocation" default="dynatrace/dynatrace.png" hidden="true" />
+  </type>
+  
+  <type type="dynatrace.Task" extends="xlrelease.PythonScript" virtual="true">
+    <property name="taskColor" hidden="true" default="#1282C8" />
+    <property name="iconLocation" default="dynatrace/dynatrace.png" hidden="true" />
+    <property name="dynatraceServer" kind="ci" referenced-type="dynatrace.Server" category="input" label="Server" />
+    <property name="username" category="input" />
+    <property name="password" password="true" category="input" />
+  </type>
+
+  <type type="dynatrace.RegisterTestRun" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="versionMajor" required="false" category="input" />
+    <property name="versionMinor" required="false" category="input" />
+    <property name="versionRevision" required="false" category="input" />
+    <property name="versionBuild" required="false" category="input" />
+    <property name="versionMilestone" required="false" category="input" />
+    <property name="marker" required="false" category="input" description="Special version marker, used in the heat-field of the Test Automation dashlet chart in Dynatrace" />
+    <property name="category" required="false" default="unit" category="input" description="Valid values are 'unit', 'uidriven', 'performance', 'load' and 'webapi'"/>
+    <property name="platform" required="false" category="input" description="The platform the test runs on. If not defined here, the platform is detected by the Dynatrace Agent" />
+    <property name="loadTestName" required="false" category="input" description="The name of the load test. This field is only used if the category of the test is 'load'" />
+    <property name="testRunId" category="output" label="Test Run ID" />
+  </type>
+
+  <type type="dynatrace.RetrieveTestResults" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="testRunId" category="input" label="Test Run ID" />
+    <property name="delay" kind="integer" default="10" category="input" label="Delay (secs)"/>
+    <property name="numDegradedTests" category="output" label="# Degraded Tests" />
+    <property name="numFailedTests" category="output" label="# Failed Tests" />
+    <property name="numImprovedTests" category="output" label="# Improved Tests" />
+    <property name="numInvalidatedTests" category="output" label="# Invalidated Tests" />
+    <property name="numPassedTests" category="output" label="# Passed Tests" />
+    <property name="numVolatileTests" category="output" label="# Volatile Tests" />
+    <property name="testResults" category="output" />
+  </type>
+</synthetic>
