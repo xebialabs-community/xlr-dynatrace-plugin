@@ -77,3 +77,5 @@ The canonical flow here involves registering a new test run with Dynatrace and p
 You would then retrieve the test results from Dynatrace and either review them manually, using e.g. a Gate task, or use a Script task to automatically determine whether to stop or continue.
 
 ![example flow](documentation/sample-validation-flow.png)
+
+![completed example flow](documentation/completed-sample-validation-flow.png)
