@@ -26,14 +26,14 @@ time.sleep(delay)
 
 response = connection.get("/rest/management/profiles/%s/testruns/%s" % (profile, testRunId), contentType = 'application/json', headers = {'Accept-Encoding': 'gzip'})
 if response.status == TESTRUN_COMPLETED_STATUS:
-    data = json.loads(response.response)
-    testResults = data.get('testRun')
-    numDegradedTests = testResults.get('numDegraded')
-    numFailedTests = testResults.get('numFailed')
-    numImprovedTests = testResults.get('numImproved')
-    numInvalidatedTests = testResults.get('numInvalidated')
-    numPassedTests = testResults.get('numPassed')
-    numVolatileTests = testResults.get('numVolatile')
+    testResults = response.response
+    data = json.loads(testResults).get('testRun')
+    numDegradedTests = data.get('numDegraded')
+    numFailedTests = data.get('numFailed')
+    numImprovedTests = data.get('numImproved')
+    numInvalidatedTests = data.get('numInvalidated')
+    numPassedTests = data.get('numPassed')
+    numVolatileTests = data.get('numVolatile')
     print "Test run %s completed.\n" % testRunId
     # the log output is Markdown
     print "\# degraded tests: #%s\n" % numDegradedTests
