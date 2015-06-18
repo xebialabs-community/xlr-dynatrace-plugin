@@ -10,12 +10,19 @@ TESTRUN_REGISTERED_STATUS = 201
 INSUFFICIENT_LICENSE_STATUS = 403
 PROFILE_NOT_FOUND_STATUS = 404
 
-# TODO: build full input object based on parameters
-content = """
-{
-    "category": "%s"
-}
-""" % category
+def addEntryIfPresent(dict, key, value):
+    if value:
+        dict[key] = value
+
+contentMap = { 'category': category }
+addEntryIfPresent(contentMap, 'versionMajor', versionMajor)
+addEntryIfPresent(contentMap, 'versionMinor', versionMinor)
+addEntryIfPresent(contentMap, 'versionRevision', versionRevision)
+addEntryIfPresent(contentMap, 'versionBuild', versionBuild)
+addEntryIfPresent(contentMap, 'versionMilestone', versionMilestone)
+addEntryIfPresent(contentMap, 'marker', marker)
+addEntryIfPresent(contentMap, 'platform', platform)
+addEntryIfPresent(contentMap, 'loadTestName', loadTestName)
 
 if dynatraceServer is None:
     print "No server provided."
@@ -26,7 +33,7 @@ if serverUrl.endswith('/'):
     serverUrl = serverUrl[:len(serverUrl)-1]
 
 connection = HttpRequest(dynatraceServer, username, password)
-response = connection.post("/rest/management/profiles/%s/testruns" % profile, content, contentType = 'application/json')
+response = connection.post("/rest/management/profiles/%s/testruns" % profile, json.dumps(contentMap), contentType = 'application/json')
 
 if response.status == TESTRUN_REGISTERED_STATUS:
     data = json.loads(response.response)

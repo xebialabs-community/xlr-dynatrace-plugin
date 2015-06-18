@@ -33,7 +33,6 @@ Registers a test run with Dynatrace and returns the test run ID. This ID needs t
 * `category`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). The default value is 'unit'. _Required_
 * `platform`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
 * `loadTestName`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `agentGroup`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
 
 **Output properties**
 

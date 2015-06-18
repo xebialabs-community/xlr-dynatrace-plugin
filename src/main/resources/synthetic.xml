@@ -29,7 +29,6 @@
     <property name="category" required="false" default="unit" category="input" description="Valid values are 'unit', 'uidriven', 'performance', 'load' and 'webapi'"/>
     <property name="platform" required="false" category="input" description="The platform the test runs on. If not defined here, the platform is detected by the Dynatrace Agent" />
     <property name="loadTestName" required="false" category="input" description="The name of the load test. This field is only used if the category of the test is 'load'" />
-    <property name="agentGroup" required="false" category="input" />
     <property name="testRunId" category="output" label="Test Run ID" />
   </type>
 
