@@ -1,0 +1,10 @@
+language: java
+deploy:
+  provider: releases
+  api-key:
+    secure: JsB3Ly/34b9T9n6NNk0t85VFStc4VdCvSYkPGrpFyyx8x+QyiGGyNCeGxgW/4Gcx3OzZmhinhWnDDAPXDPuZzJJUhX845hhKlm0MubYv0x6KCbRKflDMPhDRRFmb1uulNoHA+wCwUqioKLFEGeGr/YJIWDxG+vkVvSz8Fp37o/Jp+eaLXyBocSAhD+2B3kv+dB+lspxvTwbz1AdwIkAy0WWyPoAQ3/GiaPvzxS4U0qQtj91ObTCvSxxuhFiwmHkHzaJhQzYtZHotfW8y4fxe3BUZVxCDbWri3OuaVA3rx1YXTVV/XudlQJLhi0adgRcULtnLbufzNX8Gx1ZXMc0+5loVab7VB8QUfQJ1Y/REVtfCH+v9P17aUAZqS44XoVoeWMxIJi1VdqhS5JMn4UNEMW2I2LCQbfWfm2MRjMatuCzCnrVLdoZV6QnhKZ8P9A+tXsEEJDpwoUvRW9HjrR1M9AjeGMxGOKLGJuQh3IGY5L8RllEihhqUvINKKzvIirm1VfGdUOJ6ZPqKeTk1WKDHpzFRGhK1fkEkRz0R+B7bEj6OMkB78wKelRdvR9xLMTZNBxSdSqXXeVXM6PsaGyDeH6aeSkXLGjgRznqGv/5zvL507qoqWKC57OT9walVREqkZfk+715zLaUzqwbtpJr8KgnquCv4nGHlayBfKKxRrKE=
+  file: build/libs/xlr-dynatrace-plugin-1.0.jar
+  on:
+    all_branches: true
+    tags: true
+    repo: xebialabs-community/xlr-dynatrace-plugin
