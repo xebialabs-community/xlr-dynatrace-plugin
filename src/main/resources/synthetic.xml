@@ -44,4 +44,10 @@
     <property name="numVolatileTests" category="output" label="# Volatile Tests" />
     <property name="testResults" category="output" />
   </type>
+
+  <type type="dynatrace.StartRecording" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="presentableName" required="false" category="input" label="Display Name" description="User-friendly name for the session, to be displayed in Dynatrace" />
+    <property name="description" required="false" size="large" category="input" />
+  </type>
 </synthetic>
