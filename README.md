@@ -9,8 +9,8 @@ In addition to being a monitoring tool, Dynatrace can be used to collect data du
 ## Supported Tasks
 The plugin currently supports two tasks:
 
-* [Register test run](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
-* [Retrieve test results](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
+* [Register test run](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
+* [Retrieve test results](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
 
 #### Register test run
 
@@ -24,15 +24,15 @@ Registers a test run with Dynatrace and returns the test run ID. This ID needs t
 * `username`: The username to use to log in to the Dynatrace server. If not set, the username configured on the Dynatrace server configuration CI will be used. _Optional_
 * `password`: The password to use to log in to the Dynatrace server. If not set, the password configured on the Dynatrace server configuration CI will be used. _Optional_
 * `profile`: The system profile in Dynatrace against which the test run should be registered. _Required_
-* `versionMajor`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `versionMinor`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `versionRevision`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `versionBuild`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `versionMilestone`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `marker`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `category`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). The default value is 'unit'. _Required_
-* `platform`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
-* `loadTestName`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `versionMajor`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `versionMinor`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `versionRevision`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `versionBuild`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `versionMilestone`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `marker`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `category`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). The default value is 'unit'. _Required_
+* `platform`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
+* `loadTestName`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation). _Optional_
 
 **Output properties**
 
@@ -55,13 +55,13 @@ Attempts to retrieve the results of a given test run ID from Dynatrace. By defau
 
 **Output properties**
 
-* `numDegradedTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `numFailedTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `numImprovedTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `numInvalidatedTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `numPassedTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `numVolatileTests`: See the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
-* `testResults`: The test results returned by the Dynatrace server, in the format described in the [Dynatrace documentation](https://community.compuwareapm.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numDegradedTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numFailedTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numImprovedTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numInvalidatedTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numPassedTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `numVolatileTests`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
+* `testResults`: The test results returned by the Dynatrace server, in the format described in the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation).
 
 ## Usage
 The intended use case for this plugin is to support Dynatrace's ability to monitor runs of unit, UI, load, performance and API tests and provide information about architectural and other metrics that are relevant to go/no-go decisions.
