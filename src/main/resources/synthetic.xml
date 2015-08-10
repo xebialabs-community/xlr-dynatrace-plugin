@@ -50,4 +50,9 @@
     <property name="presentableName" required="false" category="input" label="Display Name" description="User-friendly name for the session, to be displayed in Dynatrace" />
     <property name="description" required="false" size="large" category="input" />
   </type>
+
+  <type type="dynatrace.StopRecording" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="sessionName" category="output" />
+  </type>
 </synthetic>

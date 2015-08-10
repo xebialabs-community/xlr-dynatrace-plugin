@@ -7,11 +7,12 @@ This document descripts the functionality provide by the `xlr-dynatrace-plugin`,
 In addition to being a monitoring tool, Dynatrace can be used to collect data during testing. This plugin allows users to query Dynatrace's enhanced test results from XL Release to make decisions about whether or not to continue with a release.
 
 ## Supported Tasks
-The plugin currently supports three tasks:
+The plugin currently supports four tasks:
 
 * [Register test run](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
 * [Retrieve test results](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
 * [Start session recording](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StartSessionRecording)
+* [Stop session recording](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StopSessionRecording)
 
 #### Register test run
 
@@ -78,6 +79,25 @@ Starts a session recording for a specific System Profile.
 * `profile`: The system profile in Dynatrace against which the session should be registered. _Required_
 * `presentableName`: User-friendly name for the session, to be displayed in Dynatrace. _Optional_
 * `description`: Description for the session, to be displayed in Dynatrace. _Optional_
+
+#### Stop session recording
+
+Stops session recording for a specific System Profile.
+
+This call does not complete until all recorded data has been processed by the server. Depending on the environment, it may take a few minutes until a response is received.
+
+![screenshot of 'Stop recording' task](documentation/stop-recording-task.png)
+
+**Input properties**
+
+* `dynatraceServer`: The Dynatrace server with which the session should be registered. _Required_
+* `username`: The username to use to log in to the Dynatrace server. If not set, the username configured on the Dynatrace server configuration CI will be used. _Optional_
+* `password`: The password to use to log in to the Dynatrace server. If not set, the password configured on the Dynatrace server configuration CI will be used. _Optional_
+* `profile`: The system profile in Dynatrace against which the session should be registered. _Required_
+
+**Output properties**
+
+* `sessionName`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StopSessionRecording).
 
 ## Usage
 
