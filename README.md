@@ -7,12 +7,13 @@ This document descripts the functionality provide by the `xlr-dynatrace-plugin`,
 In addition to being a monitoring tool, Dynatrace can be used to collect data during testing. This plugin allows users to query Dynatrace's enhanced test results from XL Release to make decisions about whether or not to continue with a release.
 
 ## Supported Tasks
-The plugin currently supports four tasks:
+The plugin currently supports five tasks:
 
 * [Register test run](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
 * [Retrieve test results](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356997#SystemProfiles%28REST%29-TestAutomation)
 * [Start session recording](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StartSessionRecording)
 * [Stop session recording](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StopSessionRecording)
+* [Register deployment](https://community.dynatrace.com/community/pages/viewpage.action?pageId=161922178#Incidents%28REST%29-CreateIncident)
 
 #### Register test run
 
@@ -98,6 +99,23 @@ This call does not complete until all recorded data has been processed by the se
 **Output properties**
 
 * `sessionName`: See the [Dynatrace documentation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=182356998#Sessions%28REST%29-StopSessionRecording).
+
+#### Register deployment
+
+Creates an informational 'Deployment' incident to register a deployment with the Dynatrace server.
+
+![screenshot of 'Register deployment' task](documentation/register-deployment-task.png)
+
+**Input properties**
+
+* `dynatraceServer`: The Dynatrace server with which the deployment should be registered. _Required_
+* `username`: The username to use to log in to the Dynatrace server. If not set, the username configured on the Dynatrace server configuration CI will be used. _Optional_
+* `password`: The password to use to log in to the Dynatrace server. If not set, the password configured on the Dynatrace server configuration CI will be used. _Optional_
+* `profile`: The system profile in Dynatrace against which the deployment should be registered. _Required_
+* `message`: The message to be associated with the deployment in Dynatrace. _Optional_
+* `description`: The description to be associated with the deployment in Dynatrace. _Optional_
+* `start`: The start date and time of the deployment, as an ISO 8601 date/time formatted string (e.g. `2013-12-18T04:31:12+01:00`). If not set, the time when the task executes will be used. _Optional_
+* `end`: The end date and time of the deployment, as an ISO 8601 date/time formatted string (e.g. `2013-12-18T04:31:12+01:00`). If not set, the end time will be taken to be the same as the start time. _Optional_
 
 ## Usage
 

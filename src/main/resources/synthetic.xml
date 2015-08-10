@@ -55,4 +55,12 @@
     <property name="profile" category="input" />
     <property name="sessionName" category="output" />
   </type>
+
+  <type type="dynatrace.RegisterDeployment" extends="dynatrace.Task">
+    <property name="profile" category="input" />
+    <property name="message" required="false" default="Deployment of application" category="input" />
+    <property name="description" required="false" category="input" />
+    <property name="start" required="false" category="input" label="Start Time" description="The start date and time of the deployment, as an ISO 8601 date/time formatted string. If not set, the time when the task executes will be used" />
+    <property name="end" required="false" category="input" label="End Time" description="The end date and time of the deployment, as an ISO 8601 date/time formatted string. If not set, the end time will be taken to be the same as the start time" />
+  </type>
 </synthetic>
