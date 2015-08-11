@@ -3,7 +3,7 @@ deploy:
   provider: releases
   api_key:
     secure: pjYgfHxovMUzvH5RoxueZDu9BHdJJ7EfVlnxnyMkNmooXswQdpj+keC6z1mE6r9TVzg9pr3D/pR13C5HObb3HYoc+0R3UMAdZnThgg//LhwoHldMO6HMKjS3ez97RhBEmyt5m7aY3GMc2+J9mPe0cSZCtz7IGnBosFlkCNxFMWACIbjtphi+2TBTeQUMGEIkX1s/gcdi6owrxQ3wFoSTtqx83fiV8ihD9u/kIAtWpGI7SULQziXAKAitpwncvm7Tjxg9L0Lox/M54Ok+oine9GUZmCdMVIFHcdeR3nYd52EIr6IqJ4cqq5jaQfCFuihsfHW9uLdXcG+qLs+AiB+cFBz8DopCfKDTqJPIvyyFew8gsre9ZLo5fsUcZkuu1JL9Uun6sG0JVTd+5D1YKMUDc4cBJGwiniOdy2Jz2D6FZgDFZb1M+Gy+oZQNdetojCWsqpA+ZdY1Tc4fCkAGqFuc2lnRKVe8V2Vlz8Z8UufQfBqaGPXWtmPKtvrDIWZsowrSn2VPidvgErTFhoHrpjJO8cJj9jEeQ+8EAFniEFUsKs9B+GuFMmW51MSVkd5OEl5ZIAKpMCMLN9itbn9+Pl2w16ZBROITBFBaW/H+E5Q7fXf2GS2vaCqhpfq0pabW+zu9+V2SZ4SmREUm7o2qxOZ/1WglFdBhtE8NOIneYUVAYs4=
-  file: build/libs/xlr-dynatrace-plugin-1.0.jar
+  file: build/libs/xlr-dynatrace-plugin-1.2.jar
   on:
     all_branches: true
     tags: true
