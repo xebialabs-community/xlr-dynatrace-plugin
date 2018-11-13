@@ -1,4 +1,6 @@
-#XL Release Dynatrace Plugin
+# XL Release Dynatrace Plugin
+Note:  this plugin is for Dynatrace AppMom. If you require [Dynatrace OneAgent](https://github.com/xebialabs-community/xlr-dynatrace-oneagent-plugin) please use this link.
+
 
 ## Preface
 This document descripts the functionality provide by the `xlr-dynatrace-plugin`, as well as potential future functionality.
